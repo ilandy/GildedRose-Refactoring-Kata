@@ -14,9 +14,10 @@ class Shop {
     this.items.every((item) => updateItemQuality(item));
 
     function updateItemQuality(item) {
-      if (
-        item.name === "Aged Brie"
-      ) {
+      if (item.name === "Sulfuras, Hand of Ragnaros") {
+        return
+      }
+      if ( item.name === "Aged Brie") {
         if (item.quality < 50) {
           item.quality = item.quality + 1;
         }
@@ -36,17 +37,11 @@ class Shop {
         }
       } else {
         if (item.quality > 0) {
-          if (item.name === "Sulfuras, Hand of Ragnaros") {
-          } else {
-            item.quality = item.quality - 1;
-          }
+          item.quality = item.quality - 1;
         }
       }
 
-      if (item.name === "Sulfuras, Hand of Ragnaros") {
-      } else {
-        item.sellIn = item.sellIn - 1;
-      }
+      item.sellIn = item.sellIn - 1;
 
       if (item.sellIn < 0) {
         if (item.name === "Aged Brie") {
@@ -58,10 +53,7 @@ class Shop {
             item.quality = item.quality - item.quality;
           } else {
             if (item.quality > 0) {
-              if (item.name === "Sulfuras, Hand of Ragnaros") {
-              } else {
-                item.quality = item.quality - 1;
-              }
+              item.quality = item.quality - 1;
             }
           }
         }
