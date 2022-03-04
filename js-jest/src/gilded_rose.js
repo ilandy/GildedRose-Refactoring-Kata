@@ -11,9 +11,7 @@ class Shop {
     this.items = items;
   }
   updateQuality() {
-    for (let i = 0; i < this.items.length; i++) {
-      updateItemQuality(this.items[i])
-    }
+    this.items.every(item => updateItemQuality(item))
 
     function updateItemQuality (item) {
       if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
