@@ -24,13 +24,11 @@ class Shop {
         if(item.sellIn < 0) increaseQuality(item)
 
       } else if (item.name === "Backstage passes to a TAFKAL80ETC concert") {
-        if (item.quality < 50) {
-          item.quality = item.quality + 1;
-
+        
+          increaseQuality(item)
           if (item.sellIn < 10) increaseQuality(item)
           if (item.sellIn < 5) increaseQuality(item)
           if (item.sellIn < 0) item.quality = item.quality - item.quality;
-        }
 
         
       } else {
